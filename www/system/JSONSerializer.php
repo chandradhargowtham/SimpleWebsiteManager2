@@ -57,7 +57,7 @@ function fromJson($objName)
 	switch (get_class($objName)) {
 		case 'websiteConfig':
 			{
-				echo $URLpath;
+				//echo $URLpath;
 				$file=fopen($URLpath."system/data/websiteConfig.json", "r");
 				$line=fgets($file);
 				

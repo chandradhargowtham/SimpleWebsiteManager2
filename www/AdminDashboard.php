@@ -37,14 +37,14 @@ if(isset($_POST["submit"]))
 		<form action="AdminDashboard.php" method = "POST">
 			Enter Website Name : <input type="text" name="websiteName" value="<?php echo $websiteName; ?>"><br><br>
 			Enter Website Name Color : 
-			<select name="websiteNameColor"><option value="bg-primary">Blue</option>
-				<option value="bg-dark">Black</option>
-				<option value="bg-light">White</option>
-				<option value="bg-danger">Red</option>
-				<option value="bg-info">Cerulean</option>
-				<option value="bg-success" selected="selected">Green</option>
-				<option value="bg-warning">Yellow</option>
-				<option value="bg-secondary">Gray</option>
+			<select name="websiteNameColor"><option value="text-primary">Blue</option>
+				<option value="text-dark">Black</option>
+				<option value="text-light">White</option>
+				<option value="text-danger">Red</option>
+				<option value="text-info">Cerulean</option>
+				<option value="text-success" selected="selected">Green</option>
+				<option value="text-warning">Yellow</option>
+				<option value="text-secondary">Gray</option>
 			</select><br><br>
 			Enter Website Type : <select name ="websiteType"><option value="genericWebsite">Generic Website</option><option value="learningPortal">Learning Portal</option></select><br><br>
 			Enter Home Page Banner Title : <input type="text" name="bannerHeader" value="<?php echo $bannerHeader; ?>"><br><br>
@@ -126,3 +126,4 @@ if(isset($_POST["submit"]))
 	</div>
 </body>
 </html>
+<?php include "footer/footer.php"; ?>

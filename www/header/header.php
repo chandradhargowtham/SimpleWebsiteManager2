@@ -63,7 +63,7 @@ $navTextColor = $websiteConfigData->navTextColor;
         <nav id="mainNavBar" class="navbar navbar-expand-lg navbar-dark <?php echo $primaryWebsiteColor;?>">
             <div class="container">
 
-                <a class="navbar-brand" href="<?php echo $path; ?>index.php"><?php echo $websiteName;  ?></a>
+                <a class="navbar-brand <?php echo $websiteNameColor;?>" href="<?php echo $path; ?>index.php"><?php echo $websiteName;?> </a>
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -71,7 +71,7 @@ $navTextColor = $websiteConfigData->navTextColor;
                 <div class="navbar-collapse justify-content-md-center collapse" id="navbar">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link <?php echo $navTextColor; ?>" href="adminDashboard.php">Dashboard</a>
+                            <a class="nav-link <?php echo $navTextColor; ?>" href="<?php echo $path; ?>adminDashboard.php">Dashboard</a>
                         </li>
                         <!--<li class="nav-item">
                             <a class="nav-link" href="tutorials.php">Tutorials</a>

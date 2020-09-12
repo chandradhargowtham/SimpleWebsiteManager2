@@ -43,7 +43,7 @@ if($_POST["submit"])
 	$type = $_POST["postType"];
 	$lang = $_POST["postCategory"];
 
-	$finalContent = '<?php include "../header/header.php"; ?>'.$articleBodyOpenTag."<br><h1>".$title."</h1>"."<br><br>".$content.$articleBodyCloseTag.'<?php include "../footer/footer.php"; ?>';
+	$finalContent = '<?php include "../header/header.php"; ?>'.$articleBodyOpenTag."<br><h1>".$title."</h1>"."<br><br>".$content.$articleBodyCloseTag."<br><br>".'<?php include "../footer/footer.php"; ?>';
 	$file=fopen("content/".$title.".php", "w");
 	fwrite($file, $finalContent);
 	fclose($file);
