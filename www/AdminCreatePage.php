@@ -1,12 +1,13 @@
-
+<?php include "header/header.php" ?>
 
 <html>
 <head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
 </head>
 <body>
 	<div class="container">
 		<form method = "POST" action="AdminCreatePage.php">
+			<br><br>
 			Enter Post Name: <input type="text" name="postName"><br>
 			Enter Post Type: 
 			<select name="postType">
@@ -24,6 +25,7 @@
   			</select><br><br>-->
 		Enter Post Content: <textarea name="postContent" style = "width:100%; height: 80vh;"></textarea>
 		<input type="submit" value="Create Page" name="submit">
+		<br><br>
 	</form>
 
 	</div>
@@ -32,7 +34,8 @@
 </html>
 
 <?php
-include "system/systemIncluders.php";
+
+include "system/embeddedHTMLCode.php";
 if($_POST["submit"])
 {
 	$title = $_POST["postName"];
@@ -40,15 +43,13 @@ if($_POST["submit"])
 	$type = $_POST["postType"];
 	$lang = $_POST["postCategory"];
 
-	$finalContent = $articleHeaderTag."<br>".$articleBodyOpenTag.$content.$articleBodyCloseTag;
-	$file=fopen("content/".$title.".html", "w");
+	$finalContent = '<?php include "../header/header.php"; ?>'.$articleBodyOpenTag."<br><h1>".$title."</h1>"."<br><br>".$content.$articleBodyCloseTag.'<?php include "../footer/footer.php"; ?>';
+	$file=fopen("content/".$title.".php", "w");
 	fwrite($file, $finalContent);
 	fclose($file);
 
-//name,type,lang,coursename,author,pubdate
-	//$articleEntry = new article($title.".html",$type,$lang,"korse");
+	echo "Created ".$title." successfully.";
 	$postEntry= new genericPost($title);
-	//echo "sending for conversion";
 	toJson($postEntry);
 
 }

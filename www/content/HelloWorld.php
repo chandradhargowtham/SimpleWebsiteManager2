@@ -1,0 +1,2 @@
+<?php include "../header/header.php"; ?><html><body><div class="container"><br><h1>HelloWorld</h1><br><br>Create a new post from AdminDashBoard after logging in.
+This is a test page.</div></body></html><?php include "../footer/footer.php"; ?>

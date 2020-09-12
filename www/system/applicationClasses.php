@@ -4,8 +4,6 @@
 class tutorialEntry
 {
 	// variable declarations
-
-	
 	public $tutorialName;
 	public $tutorialType;
 	public $tutorialLang;
@@ -20,12 +18,9 @@ class tutorialEntry
 		$this->tutorialType=$tutorialType;
 		$this->tutorialLang=$tutorialLang;
 		$this->courseName=$courseName;
-		
-
 	}
 
-	// Getters
-	
+	// Getters	
 
 	public function getTutorialName()
 	{
@@ -95,27 +90,57 @@ class displayPost
 		$this->postName = $postName;
 
 		$postLink= "content/".$postName;
-		$printablePostName = substr($postName, 0,strlen($postName)-5);
+		$printablePostName = substr($postName, 0,strlen($postName)-4);
 
 		echo '<div class ="col-sm-6">';
 		echo '<div class ="card m-2">';
 		echo '<div class ="card-body p-5">';
 		echo '<h5 class="card-title">'.$printablePostName.'</h5><br>';
 		//echo '<p class="card-text">'."author".'</p>';
-		$this->createPhpFile($postName,$printablePostName);
-		echo '<a href="'."goto=".$printablePostName.'.php'.'" class="btn btn-primary">View Article</a>';
+		echo '<a href="'."content/".$postName.'" class="btn btn-primary">View Article</a>';
 		echo '</div>';
 		echo '</div>';
 		echo '</div>';
 	}
+}
 
-	function createPhpFile($fileName,$printablePostName)
+
+class websiteConfig
+{
+	public $websiteName;
+	public $websiteType;
+	public $bannerHeader;
+	public $bannerSubHeader;
+	public $primaryWebsiteColor;
+	public $secondaryWebsiteColor;
+	public $primaryTextColor;
+	public $secondaryTextColor;
+	public $websiteBGColor;
+	public $websiteNameColor;
+	public $footerURL;
+	public $linkTextColor;
+	public $navTextColor;
+
+	public function addData($a1,$a2,$a3,$a4,$a5,$a6,$a7,$a8,$a9,$a10,$a11,$a12,$a13)
 	{
-		$file = fopen("goto=".$printablePostName.".php","w");
-		$dataToInclude = '<?php include "header/header.php"; include "'."content/$fileName".'";  include "footer/footer.php"; ?>';
+		$this->websiteName =$a1;
+		$this->websiteType =$a2;
+		$this->bannerHeader =$a3;
+		$this->bannerSubHeader =$a4;
+		$this->primaryWebsiteColor =$a5;
+		$this->secondaryWebsiteColor =$a6;
+		$this->primaryTextColor =$a7;
+		$this->secondaryTextColor =$a8;
+		$this->websiteBGColor=$a9;
+		$this->websiteNameColor = $a10;
+		$this->footerURL = $a11;
+		$this->linkTextColor = $a12;
+		$this->navTextColor= $a13;
+	}
 
-		fwrite($file, $dataToInclude);
-		fclose($file);
+	public function getWebsiteName()
+	{
+		return $this->websiteName;
 	}
 }
 

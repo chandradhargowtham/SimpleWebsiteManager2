@@ -1,10 +1,9 @@
 <html>
-<footer style="margin-top: 100px; background-color: #000000; padding: 20px;">
-    
+<footer class="container-fluid bg-dark text-center p-3 <?php echo $navTextColor; ?>">
+      	<h5> Copyright &copy <a href="<?php echo $footerURL; ?>" > <?php echo $websiteName;?> </a><?php echo ", ".date("Y"); ?></h5>
+     </footer>
 
-    <p style="text-align: center; color:#FFFFFF; ">Copyright &copy;
-        <a href="http://misplacedminds.com" style="color:white">Misplaced Minds</a> <?php echo date("Y"); ?></p>
-</footer>
+
 
 
 </html>

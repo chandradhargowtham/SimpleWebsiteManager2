@@ -21,4 +21,4 @@ also set values of:
 
 
 
-openarticle: page.php has headr,$page,footer.. functionacall sets $page value so that this one is regereated again n again
+Open from JSON instead of direct file... still remaining this functionality.

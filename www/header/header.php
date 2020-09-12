@@ -1,4 +1,37 @@
-<?php
+<?php  
+if(is_dir("system"))
+{
+include "system/systemIncluders.php";
+}
+else
+{
+include "../system/systemIncluders.php";
+}
+
+if(is_dir("content"))
+{
+$path = "";
+}else
+{
+$path = "../";
+}
+
+// get website Config data
+
+$websiteConfigData = new websiteConfig();
+$websiteConfigData = fromJson($websiteConfigData);
+
+$websiteName = $websiteConfigData->websiteName;
+$websiteNameColor = $websiteConfigData->websiteNameColor;
+$websiteType = $websiteConfigData->websiteType;
+$websiteBGColor = $websiteConfigData->websiteBGColor;
+$primaryWebsiteColor = $websiteConfigData->primaryWebsiteColor;
+$primaryTextColor = $websiteConfigData->primaryTextColor;
+$secondaryTextColor = $websiteConfigData->secondaryTextColor;
+$footerURL = $websiteConfigData->footerURL;
+$bannerHeader= $websiteConfigData->bannerHeader;
+$bannerSubHeader= $websiteConfigData->bannerSubHeader;
+$navTextColor = $websiteConfigData->navTextColor;
 
 ?>
 <!doctype html>
@@ -27,47 +60,49 @@
 <body>
     <header class="sticky-top">
         <!-- NAVBAR Begins -->
-        <nav id="mainNavBar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav id="mainNavBar" class="navbar navbar-expand-lg navbar-dark <?php echo $primaryWebsiteColor;?>">
             <div class="container">
-                <a class="navbar-brand" href="index.php">Misplaced Minds</a>
+
+                <a class="navbar-brand" href="<?php echo $path; ?>index.php"><?php echo $websiteName;  ?></a>
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
 
                 <div class="navbar-collapse justify-content-md-center collapse" id="navbar">
                     <ul class="navbar-nav">
-                        <!--<li class="nav-item">
-                            <a class="nav-link" href="codesnippets.php">Courses</a>
-                        </li>
                         <li class="nav-item">
+                            <a class="nav-link <?php echo $navTextColor; ?>" href="adminDashboard.php">Dashboard</a>
+                        </li>
+                        <!--<li class="nav-item">
                             <a class="nav-link" href="tutorials.php">Tutorials</a>
                         </li>-->
                         <li class="nav-item">
-                            <a class="nav-link" href="articles.php">Articles</a>
+                            <a class="nav-link <?php echo $navTextColor; ?>" href="<?php echo $path; ?>articles.php">Articles</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="search.php">Search</a>
+                            <a class="nav-link <?php echo $navTextColor; ?>" href="<?php echo $path; ?>search.php">Search</a>
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.php">Contact</a>
+                            <a class="nav-link <?php echo $navTextColor; ?>" href="<?php echo $path; ?>contact.php">Contact</a>
                         </li>
                         <?php
-                        if ($_SESSION['loggedIn']==true) {
+                        if ($_SESSION['loggedIn']==true) 
+                        {
                             
                             echo '<li class="nav-item">';
-                            echo '<a class="nav-link" href="admintools.php">Admin</a>';
-                        echo "</li>";
+                            echo '<a class="nav-link'. $navTextColor .'" href="'.  $path .'admintools.php">Admin</a>';
+                            echo "</li>";
                         }?>
                         <?php
                         if ($_SESSION['loggedIn']!=true) {
                             
                             echo '<li class="nav-item">';
-                            echo '<a class="nav-link" href="login.php">Login</a>';
+                            echo '<a class="nav-link '.$navTextColor.'" href="'.$path.'login.php">Login</a>';
                         echo "</li>";
                         }else{
                         echo '<li class="nav-item">';
-                            echo '<a class="nav-link" href="logout.php">Logout</a>';
+                            echo '<a class="nav-link '.$navTextColor.'" href="'.$path.'logout.php">Logout</a>';
                         echo "</li>";
                         }
                         ?>

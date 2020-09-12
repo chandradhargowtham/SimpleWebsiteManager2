@@ -1,5 +1,5 @@
 <?php
-include "system/systemIncluders.php";
+
  include "header/header.php";
 
 function displayContent()
