@@ -7,7 +7,7 @@ function displayContent()
 	$arr = scandir("content/");
 	for ($i=2; $i < sizeof($arr) ; $i++) 
 	{ 
-		$obj = new displayGenericPost($arr[$i]);
+		$obj = new displayPost($arr[$i]);
 	}
 }
 

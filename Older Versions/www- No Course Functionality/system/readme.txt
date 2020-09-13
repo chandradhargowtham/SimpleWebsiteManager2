@@ -12,14 +12,13 @@
 
 also set values of:
 
-1. Generic website/tutorial website - Fnlity remains
+1. Generic website/tutorial website
+2. Website Name
 3. Header pages based on generic/tut
+4. banner title
 5. banner img
+6. 
 
 
 
 Open from JSON instead of direct file... still remaining this functionality.
-Delete existing post data from json ^ this json
-
-
-

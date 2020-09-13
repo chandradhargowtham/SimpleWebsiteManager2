@@ -16,7 +16,7 @@ $path = "";
 $path = "../";
 }
 
-// get website Config data - will be used all over the website (since header is attached to every single page, it will be accessible)
+// get website Config data
 
 $websiteConfigData = new websiteConfig();
 $websiteConfigData = fromJson($websiteConfigData);
@@ -26,7 +26,6 @@ $websiteNameColor = $websiteConfigData->websiteNameColor;
 $websiteType = $websiteConfigData->websiteType;
 $websiteBGColor = $websiteConfigData->websiteBGColor;
 $primaryWebsiteColor = $websiteConfigData->primaryWebsiteColor;
-$secondaryWebsiteColor = $websiteConfigData->secondaryWebsiteColor;
 $primaryTextColor = $websiteConfigData->primaryTextColor;
 $secondaryTextColor = $websiteConfigData->secondaryTextColor;
 $footerURL = $websiteConfigData->footerURL;
@@ -74,21 +73,6 @@ $navTextColor = $websiteConfigData->navTextColor;
                         <li class="nav-item">
                             <a class="nav-link <?php echo $navTextColor; ?>" href="<?php echo $path; ?>adminDashboard.php">Dashboard</a>
                         </li>
-
-                        <?php
-                            if($websiteType=="learningPortal")
-                            {
-                                echo '<li class="nav-item">';
-                                echo '<a class="nav-link '.$navTextColor.' ?>" href="'.$path.'tutorials.php">Tutorials</a>';
-                                echo '</li>';
-
-                                echo '<li class="nav-item">';
-                                echo '<a class="nav-link '.$navTextColor.' ?>" href="'.$path.'courses.php">Courses</a>';
-                                echo '</li>';
-                            }
-
-
-                        ?>
                         <!--<li class="nav-item">
                             <a class="nav-link" href="tutorials.php">Tutorials</a>
                         </li>-->

@@ -1,5 +1,7 @@
 <?php
 
+
+
 // Used for tutorial/elearning website
 class tutorialEntry
 {
@@ -12,41 +14,96 @@ class tutorialEntry
 	public $publishDate;
 
 	//Constructor
-	public  function __construct($tutorialName,$tutorialType,$tutorialLang,$courseName)
+	public  function __construct($tutorialName,$tutorialType,$tutorialLang,$courseName,$author,$publishDate)
 	{
 		$this->tutorialName=$tutorialName;
 		$this->tutorialType=$tutorialType;
 		$this->tutorialLang=$tutorialLang;
 		$this->courseName=$courseName;
+		$this->author=$author;
+		$this->publishDate=$publishDate;
 	}
 
 	// Getters	
 
 	public function getTutorialName()
 	{
-		return $tutorialName;
+		return $this->tutorialName;
 	}
 	public function getTutorialType()
 	{
-		return $tutorialType;
+		return $this->tutorialType;
 	}
 	public function getTutorialLang()
 	{
-		return $tutorialLang;
+		return $this->tutorialLang;
 	}
 	public function getCourseName()
 	{
-		return $courseName;
+		return $this->courseName;
 	}
 	public function getAuthor()
 	{
-		return $author;
+		return $this->author;
 	}
 	public function getPublishDate()
 	{
-		return $publishDate;
+		return $this->publishDate;
 	}
 }
+
+// class to generate a Tutorial related HTML code
+class displayTutorial
+{
+	public $tutorialName;
+	public $printableTutorialName;
+	
+	function __construct($tutorialName)
+	{
+		$this->tutorialLang = $tutorialName;
+
+		$postLink= "content/".$tutorialName;
+		$printableTutorialName = substr($tutorialName, 0,strlen($tutorialName)-4);
+
+		//obj manipulation
+		$file = fopen("system/data/articleDB/$printableTutorialName.json", "r");
+		$line=fgets($file);
+		$obj=json_decode($line);
+
+		// getting required data
+		$websiteConfigData = new websiteConfig();
+		$websiteConfigData = fromJson($websiteConfigData);
+
+		$websiteName = $websiteConfigData->websiteName;
+		$websiteNameColor = $websiteConfigData->websiteNameColor;
+		$websiteType = $websiteConfigData->websiteType;
+		$websiteBGColor = $websiteConfigData->websiteBGColor;
+		$primaryWebsiteColor = $websiteConfigData->primaryWebsiteColor;
+		$secondaryWebsiteColor = $websiteConfigData->secondaryWebsiteColor;
+		$primaryTextColor = $websiteConfigData->primaryTextColor;
+		$secondaryTextColor = $websiteConfigData->secondaryTextColor;
+		$footerURL = $websiteConfigData->footerURL;
+		$bannerHeader= $websiteConfigData->bannerHeader;
+		$bannerSubHeader= $websiteConfigData->bannerSubHeader;
+		$navTextColor = $websiteConfigData->navTextColor;
+
+		//
+		if($obj->tutorialName!="")
+		{	
+			
+			echo '	<div class="card '. $secondaryWebsiteColor.' p-2 m-2 ">';
+	    	echo '	<div class="card-body text-center ">';
+	      	echo '	<p class="card-text '. $primaryWebsiteColor.' '.$navTextColor.'  p-2">'.$obj->tutorialLang.'</p>';
+	      	echo '	<p class="card-text ">'.$obj->tutorialName.'</p>by '.$obj->author." on ".$obj->publishDate.' <p> </p>';
+	      	echo '	<a href="'."content/".$tutorialName.'" class="btn btn-dark">Go</a>';
+	   		echo '	</div>';
+	  		echo '	</div>';
+	  		
+		}
+	}
+}
+
+
 
 // Used for a Generic Blog/Website Post
 class genericPost
@@ -58,9 +115,11 @@ class genericPost
 	public $publishDate;
 
 	// constructor
-	function __construct($postName)
+	function __construct($postName,$author,$publishDate)
 	{
 		$this->postName = $postName;
+		$this->author=$author;
+		$this->publishDate=$publishDate;
 	}
 
 	// getter
@@ -80,7 +139,7 @@ class genericPost
 }
 
 // class to generate a genericPost related HTML code
-class displayPost
+class displayGenericPost
 {
 	public $postName;
 	public $printablePostName;
@@ -92,17 +151,26 @@ class displayPost
 		$postLink= "content/".$postName;
 		$printablePostName = substr($postName, 0,strlen($postName)-4);
 
-		echo '<div class ="col-sm-6">';
-		echo '<div class ="card m-2">';
-		echo '<div class ="card-body p-5">';
-		echo '<h5 class="card-title">'.$printablePostName.'</h5><br>';
-		//echo '<p class="card-text">'."author".'</p>';
-		echo '<a href="'."content/".$postName.'" class="btn btn-primary">View Article</a>';
-		echo '</div>';
-		echo '</div>';
-		echo '</div>';
+		//obj manipulation
+		$file = fopen("system/data/articleDB/$printablePostName.json", "r");
+		$line=fgets($file);
+		$obj=json_decode($line);
+		if($obj->postName!="")
+		{
+			echo '<div class ="col-sm-6">';
+			echo '<div class ="card m-2">';
+			echo '<div class ="card-body p-5">';
+			echo '<h5 class="card-title">'.$printablePostName.'</h5><br>';
+			echo '<p class="card-text">'."by ".$obj->author." on ".$obj->publishDate.'</p>';
+			echo '<a href="'."content/".$postName.'" class="btn btn-primary">View Article</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div>';
+			}
 	}
 }
+
+
 
 
 class websiteConfig
