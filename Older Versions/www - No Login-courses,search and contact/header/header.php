@@ -34,7 +34,6 @@ $bannerHeader= $websiteConfigData->bannerHeader;
 $bannerSubHeader= $websiteConfigData->bannerSubHeader;
 $navTextColor = $websiteConfigData->navTextColor;
 $contactEmailId =$websiteConfigData->contactEmailId;
-$linkTextColor = $websiteConfigData->linkTextColor;
 
 ?>
 <!doctype html>

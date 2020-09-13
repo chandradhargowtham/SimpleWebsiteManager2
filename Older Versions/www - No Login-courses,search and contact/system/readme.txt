@@ -12,14 +12,14 @@
 
 also set values of:
 
-1. Generic website/tutorial website - little Fnlity remains - article/product landing page/image gallery type extra fnalities
+1. Generic website/tutorial website - Fnlity remains
+3. Header pages based on generic/tut
 5. banner img
-6. In dash board, via checkmark bools to select which pages in index and which ones in header.
 
 
 
-login data - getter - login page
-role changes setter - dashboard
+Open from JSON instead of direct file... still remaining this functionality.
+Delete existing post data from json ^ this json
 
 
 
