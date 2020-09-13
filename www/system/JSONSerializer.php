@@ -35,10 +35,10 @@
 				break;	
 		case 'user':
 				{
-							$file = fopen("system/data/userDB/".$obj->emailId.".json", "w");
-							$line = json_encode($obj);
-							fwrite($file, $line);
-							fclose($file);
+					$file = fopen("system/data/userDB/".$obj->emailId.".json", "w");
+					$line = json_encode($obj);
+					fwrite($file, $line);
+					fclose($file);
 					
 					
 				}

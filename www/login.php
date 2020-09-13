@@ -52,7 +52,7 @@ if(isset($_POST["submit"]))
 			 <div class="form-group <?php echo $navTextColor; ?>"><p>Enter Password : </p><input class="form-control" type="password" name="password"></div>	 
 			 <div class="form-group <?php echo $navTextColor; ?>"> <input class="form-control btn <?php echo($secondaryWebsiteColor); ?>" type="submit" name="submit" value = "Login"></div>
 			 <a class="btn <?php echo $secondaryWebsiteColor." ".$linkTextColor; ?>"href="register.php">Create Account</a>
-			 <a class="btn <?php echo $secondaryWebsiteColor." ".$linkTextColor;  ?>"href="">Reset Password</a>
+			 <a class="btn <?php echo $secondaryWebsiteColor." ".$linkTextColor;  ?>"href="resetPassword.php">Reset Password</a>
 		</form>
 		</div>
 	</div>

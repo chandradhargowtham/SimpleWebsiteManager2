@@ -15,10 +15,12 @@ if (isset($_POST["submit"]))
 		}
 		
 
-		if($userExists==false)
+		if($userExists==false && strlen($emailId)>3 && strlen($password)>3 && strlen($userName)>3)
 		{
-			$newUser= new user($userName,$password,$emailId);
+			$newUser= new user($userName,$password,$emailId,"");
 			toJson($newUser);
+			$outputString = "Thank you for registering on ".$websiteName." Your emailId is ".$emailId;
+			mail($emailId, $websiteName." - New Registration", $outputString);
 			echo '<div class="alert alert-success" role="alert">New Account Created</div>';
 			
 
@@ -29,7 +31,7 @@ if (isset($_POST["submit"]))
 		}
 		else
 		{
-			echo '<div class="alert alert-danger" role="alert">Please Reload and try again.</div>';
+			echo '<div class="alert alert-danger" role="alert">ERROR!! Please Reload and try again.</div>';
 		}
 		
 					

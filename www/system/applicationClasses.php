@@ -6,13 +6,15 @@ class user
 	public $password;
 	public $emailId;
 	public $role;
+	public $passwordResetCode;
 
-	function __construct($userName,$password,$emailId)
+	function __construct($userName,$password,$emailId,$passwordResetCode)
 	{
 		$this->userName=$userName;
 		$this->password=$password;
 		$this->emailId=$emailId;
 		$this->role="user";
+		$this->passwordResetCode=$passwordResetCode;
 	}
 }
 
@@ -203,7 +205,7 @@ class websiteConfig
 	public $linkTextColor;
 	public $navTextColor;
 	public $contactEmailId;
-	
+
 
 	public function addData($a1,$a2,$a3,$a4,$a5,$a6,$a7,$a8,$a9,$a10,$a11,$a12,$a13,$a14)
 	{
