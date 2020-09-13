@@ -33,6 +33,7 @@ $footerURL = $websiteConfigData->footerURL;
 $bannerHeader= $websiteConfigData->bannerHeader;
 $bannerSubHeader= $websiteConfigData->bannerSubHeader;
 $navTextColor = $websiteConfigData->navTextColor;
+$contactEmailId =$websiteConfigData->contactEmailId;
 
 ?>
 <!doctype html>

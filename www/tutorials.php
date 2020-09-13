@@ -18,7 +18,7 @@ function displayContent()
 	
 </head>
 
-<body>
+<body class="<?php echo $websiteBGColor; ?>">
 	<div class="container"> <br>
 		<div class="row">
 			<?php displayContent(); ?>

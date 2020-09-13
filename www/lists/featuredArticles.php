@@ -1,7 +1,7 @@
 
 <html>
 <head></head>
-<body>
+<body class="<?php echo $websiteBGColor; ?>">
 	<div class="container-fluid <?php echo $websiteBGColor; ?> p-5">
 		<h5>Featured Articles : </h5>
 		<div class="row">

@@ -14,8 +14,9 @@
 
 			if($obj->courseName!="None" && $obj->tutorialName!= "")
 			{	
-				echo $obj->courseName." - ";
-				echo '<a href="content/'.$obj->tutorialName.'.php">'.$obj->tutorialName.'</a><br>';
+				echo '<tr><td>'.$obj->courseName." </td>";
+				$tutorialTitle = str_replace($obj->courseName, "", $obj->tutorialName);
+				echo '<td><a href="content/'.$obj->tutorialName.'.php">'.$tutorialTitle.'</a></td></tr><br>';
 				
 
 			}
@@ -29,11 +30,19 @@
 	
 </head>
 
-<body>
+<body class="<?php echo $websiteBGColor; ?>">
 	<div class="container"> <br>
-		<div class="rows">
-			<?php scanCourses(); ?>
-		</div>
+		<table class="table">
+    <thead>
+      <tr>
+        <th>Course Series</th>
+        <th>Tutorial</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php scanCourses();?>
+      </tbody>
+  </table>
 
 	</div>
 

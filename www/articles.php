@@ -18,8 +18,8 @@ function displayContent()
 	
 </head>
 
-<body>
-	<div class="container"> <br>
+<body class="<?php echo $websiteBGColor; ?>">
+	<div class="container "> <br>
 		<div class="row">
 			<?php displayContent(); ?>
 		</div>

@@ -88,13 +88,13 @@ class displayTutorial
 		$navTextColor = $websiteConfigData->navTextColor;
 
 		//
-		if($obj->tutorialName!="")
+		if($obj->tutorialName!="" && $obj->courseName=="None")
 		{	
 			
 			echo '	<div class="card '. $secondaryWebsiteColor.' p-2 m-2 ">';
 	    	echo '	<div class="card-body text-center ">';
-	      	echo '	<p class="card-text '. $primaryWebsiteColor.' '.$navTextColor.'  p-2">'.$obj->tutorialLang.'</p>';
-	      	echo '	<p class="card-text ">'.$obj->tutorialName.'</p>by '.$obj->author." on ".$obj->publishDate.' <p> </p>';
+	      	echo '	<p class="card-text '. $websiteBGColor.' '.$navTextColor.'  p-2">'.$obj->tutorialLang.'</p>';
+	      	echo '	<p class="card-text "><h5 class ="'.$primaryWebsiteColor."  ".$navTextColor." p-2".'">'.$obj->tutorialName.'</h5>by '.$obj->author." on ".$obj->publishDate.' <p> </p>';
 	      	echo '	<a href="'."content/".$tutorialName.'" class="btn btn-dark">Go</a>';
 	   		echo '	</div>';
 	  		echo '	</div>';
@@ -188,8 +188,9 @@ class websiteConfig
 	public $footerURL;
 	public $linkTextColor;
 	public $navTextColor;
+	public $contactEmailId;
 
-	public function addData($a1,$a2,$a3,$a4,$a5,$a6,$a7,$a8,$a9,$a10,$a11,$a12,$a13)
+	public function addData($a1,$a2,$a3,$a4,$a5,$a6,$a7,$a8,$a9,$a10,$a11,$a12,$a13,$a14)
 	{
 		$this->websiteName =$a1;
 		$this->websiteType =$a2;
@@ -204,6 +205,7 @@ class websiteConfig
 		$this->footerURL = $a11;
 		$this->linkTextColor = $a12;
 		$this->navTextColor= $a13;
+		$this->contactEmailId=$a14;
 	}
 
 	public function getWebsiteName()

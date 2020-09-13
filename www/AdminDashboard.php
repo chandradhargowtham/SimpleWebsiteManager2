@@ -18,10 +18,11 @@ if(isset($_POST["submit"]))
 	$footerURL=$_POST["footerURL"];
 	$linkTextColor= $_POST["linkTextColor"];
 	$navTextColor = $_POST["navTextColor"];
+	$contactEmailId = $_POST["contactEmailId"];
 
 	$obj = new websiteConfig();
 	
-	$obj->addData($websiteName,$websiteType,$bannerHeader,$bannerSubHeader,$primaryWebsiteColor,$secondaryWebsiteColor,$primaryTextColor,$secondaryTextColor,$websiteBGColor,$websiteNameColor,$footerURL,$linkTextColor,$navTextColor);
+	$obj->addData($websiteName,$websiteType,$bannerHeader,$bannerSubHeader,$primaryWebsiteColor,$secondaryWebsiteColor,$primaryTextColor,$secondaryTextColor,$websiteBGColor,$websiteNameColor,$footerURL,$linkTextColor,$navTextColor,$contactEmailID);
 	
 	toJson($obj);
 	Echo "Save Complete";
@@ -31,7 +32,7 @@ if(isset($_POST["submit"]))
 <html>
 <head>
 </head>
-<body>
+<body class="<?php echo $websiteBGColor; ?>">
 	<div class="container p-4">
 		<a class="btn btn-primary" href="adminCreatePage.php">Create a New post </a> <br><hr>
 		<form action="AdminDashboard.php" method = "POST">
@@ -120,6 +121,7 @@ if(isset($_POST["submit"]))
 				<option value="text-secondary">Gray</option>
 			</select><br><br>
 			Enter Footer URL : <input type="text" name="footerURL" value="<?php echo $footerURL; ?>"><br><br>
+			Enter Contact Email : <input type="text" name="contactEmailId" value="<?php echo $contactEmailId; ?>"><br><br>
 
 			<input type="submit" name="submit" value="Save Data">
 		</form><hr>
