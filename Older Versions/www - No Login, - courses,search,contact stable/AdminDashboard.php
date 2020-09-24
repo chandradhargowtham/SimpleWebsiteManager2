@@ -1,11 +1,4 @@
 <?php 
-session_start();
-if($_SESSION['loggedIn']!=true)
-{
-    header("Location: login.php");
-}
-?>
-<?php 
 include "header/header.php";
 
 
@@ -26,16 +19,10 @@ if(isset($_POST["submit"]))
 	$linkTextColor= $_POST["linkTextColor"];
 	$navTextColor = $_POST["navTextColor"];
 	$contactEmailId = $_POST["contactEmailId"];
-	$productDescriptionTitleText = $_POST["productDescriptionTitleText"];
-	$productDescriptionTitleLinkLabel = $_POST["productDescriptionTitleLinkLabel"];
-	$productDescriptionMainText = $_POST["productDescriptionMainText"];
-	$productDescriptionLink = $_POST["productDescriptionLink"];
-
-	
 
 	$obj = new websiteConfig();
 	
-	$obj->addData($websiteName,$websiteType,$bannerHeader,$bannerSubHeader,$primaryWebsiteColor,$secondaryWebsiteColor,$primaryTextColor,$secondaryTextColor,$websiteBGColor,$websiteNameColor,$footerURL,$linkTextColor,$navTextColor,$contactEmailId,$productDescriptionTitleText,$productDescriptionTitleLinkLabel,$productDescriptionMainText,$productDescriptionLink);
+	$obj->addData($websiteName,$websiteType,$bannerHeader,$bannerSubHeader,$primaryWebsiteColor,$secondaryWebsiteColor,$primaryTextColor,$secondaryTextColor,$websiteBGColor,$websiteNameColor,$footerURL,$linkTextColor,$navTextColor,$contactEmailID);
 	
 	toJson($obj);
 	Echo "Save Complete";
@@ -135,12 +122,6 @@ if(isset($_POST["submit"]))
 			</select><br><br>
 			Enter Footer URL : <input type="text" name="footerURL" value="<?php echo $footerURL; ?>"><br><br>
 			Enter Contact Email : <input type="text" name="contactEmailId" value="<?php echo $contactEmailId; ?>"><br><br>
-
-			Enter Product Description Title : <input type="text" name="productDescriptionTitleText" value="<?php echo $productDescriptionTitleText; ?>"><br><br>
-			Enter Product Description Link Label : <input type="text" name="productDescriptionTitleLinkLabel" value="<?php echo $productDescriptionTitleLinkLabel; ?>"><br><br>
-			Enter Product Description Link : <input type="text" name="productDescriptionLink" value="<?php echo $productDescriptionLink; ?>"><br><br>
-			Enter Product Description Main Body : <input type="text" name="productDescriptionMainText" value="<?php echo $productDescriptionMainText; ?>"><br><br>
-
 
 			<input type="submit" name="submit" value="Save Data">
 		</form><hr>

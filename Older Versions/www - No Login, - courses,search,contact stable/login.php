@@ -1,6 +1,7 @@
 <?php
-session_start();
-
+	include "header/header.php";
+?>
+<?php
 
 if(isset($_POST["submit"]))
 {
@@ -25,15 +26,10 @@ if(isset($_POST["submit"]))
 			{
 				if($obj->password===$password)
 				{
-					$_SESSION['loggedIn']=true;
-					$_SESSION['User']=$emailId;
-					header("Location: index.php");
-			
 					echo '<div class="alert alert-success" role="alert">Login Successfull</div>';
 				}else
 				{
 					echo '<div class="alert alert-danger" role="alert">Incorrect Password.</div>';
-					session_destroy();
 				}
 			}
 		}else
@@ -42,9 +38,6 @@ if(isset($_POST["submit"]))
 		}
 }
 
-?>
-<?php
-	include "header/header.php";
 ?>
 <!DOCTYPE html>
 <html>

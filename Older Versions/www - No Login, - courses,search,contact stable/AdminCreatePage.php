@@ -1,10 +1,3 @@
-<?php 
-session_start();
-if($_SESSION['loggedIn']!=true)
-{
-    header("Location: login.php");
-}
-?>
 <?php include "header/header.php" ?>
 
 <html>
@@ -51,9 +44,6 @@ if($_SESSION['loggedIn']!=true)
 		Enter Post Content: <textarea name="postContent" style = "width:100%; height: 80vh;"></textarea>
 		<input type="submit" value="Create Page" name="submit">
 		<br><br>
-		
-		<p><br><a href="<?php echo $path; ?>addCodeSnippet.php" target="_blank">Click here </a>to add a code snippet.</p>
-  		<p><a href="<?php echo $path; ?>image.php" target="_blank">Click here </a>to upload and add an image.</p>
 	</form>
 
 	</div>
@@ -79,11 +69,8 @@ if($_POST["submit"])
 	{
 		$prefix=$courseName;
 	}
-	
-	$content = str_replace("\n", "<br>", $content);
-
+	// addig else fixes course but breaks arti and tuti- bugs
 	$finalContent = '<?php include "../header/header.php"; ?>'.$articleBodyOpenTag."<br><h1>".$title."</h1>"."<br><br>".$content.$articleBodyCloseTag."<br><br>".'<?php include "../footer/footer.php"; ?>';
-	
 	$file=fopen("content/".$prefix.$title.".php", "w");
 	fwrite($file, $finalContent);
 	fclose($file);
@@ -92,14 +79,14 @@ if($_POST["submit"])
 	echo "Created ".$title." successfully.";
 	if($websiteType=="learningPortal")
 	{
-		$postEntry = new tutorialEntry($prefix.$title,$type,$lang,$courseName,$_SESSION['User'],date("d-m-Y"));
+		$postEntry = new tutorialEntry($prefix.$title,$type,$lang,$courseName,"Admin",date("d-m-Y"));
 		if($type=="article")
 		{
-			$postEntry= new genericPost($title,$_SESSION['User'],date("d-m-Y"));
+			$postEntry= new genericPost($title,"Admin",date("d-m-Y"));
 		}
 	}else
 	{
-		$postEntry= new genericPost($title,$_SESSION['User'],date("d-m-Y"));
+		$postEntry= new genericPost($title,"Admin",date("d-m-Y"));
 	}
 	
 	

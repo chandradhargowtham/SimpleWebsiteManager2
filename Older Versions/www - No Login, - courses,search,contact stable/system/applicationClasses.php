@@ -205,13 +205,9 @@ class websiteConfig
 	public $linkTextColor;
 	public $navTextColor;
 	public $contactEmailId;
-	public $productDescriptionTitleText;
-	public $productDescriptionTitleLinkLabel;
-	public $productDescriptionMainText;
-	public $productDescriptionLink;
 
 
-	public function addData($a1,$a2,$a3,$a4,$a5,$a6,$a7,$a8,$a9,$a10,$a11,$a12,$a13,$a14,$a15,$a16,$a17,$a18)
+	public function addData($a1,$a2,$a3,$a4,$a5,$a6,$a7,$a8,$a9,$a10,$a11,$a12,$a13,$a14)
 	{
 		$this->websiteName =$a1;
 		$this->websiteType =$a2;
@@ -227,10 +223,6 @@ class websiteConfig
 		$this->linkTextColor = $a12;
 		$this->navTextColor= $a13;
 		$this->contactEmailId=$a14;
-		$this->productDescriptionTitleText=$a15;
-		$this->productDescriptionTitleLinkLabel=$a16;
-		$this->productDescriptionMainText=$a17;
-		$this->productDescriptionLink=$a18;
 	}
 
 	public function getWebsiteName()

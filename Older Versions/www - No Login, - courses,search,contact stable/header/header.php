@@ -1,5 +1,4 @@
 <?php  
-
 if(is_dir("system"))
 {
 include "system/systemIncluders.php";
@@ -36,10 +35,6 @@ $bannerSubHeader= $websiteConfigData->bannerSubHeader;
 $navTextColor = $websiteConfigData->navTextColor;
 $contactEmailId =$websiteConfigData->contactEmailId;
 $linkTextColor = $websiteConfigData->linkTextColor;
-$productDescriptionTitleText= $websiteConfigData->productDescriptionTitleText;
-$productDescriptionTitleLinkLabel= $websiteConfigData->productDescriptionTitleLinkLabel;
-$productDescriptionMainText= $websiteConfigData->productDescriptionMainText;
-$productDescriptionLink= $websiteConfigData->productDescriptionLink;
 
 ?>
 <!doctype html>
@@ -78,14 +73,9 @@ $productDescriptionLink= $websiteConfigData->productDescriptionLink;
 
                 <div class="navbar-collapse justify-content-md-center collapse" id="navbar">
                     <ul class="navbar-nav">
-                        <?php
-                        if ($_SESSION['loggedIn']==true) 
-                        {
-                        echo '<li class="nav-item">';
-                            echo '<a class="nav-link '.$navTextColor.'" href="'.$path.'adminDashboard.php">Dashboard</a>';
-                        echo "</li>";
-                        }
-                        ?>
+                        <li class="nav-item">
+                            <a class="nav-link <?php echo $navTextColor; ?>" href="<?php echo $path; ?>adminDashboard.php">Dashboard</a>
+                        </li>
 
                         <?php
                             if($websiteType=="learningPortal")
@@ -114,7 +104,14 @@ $productDescriptionLink= $websiteConfigData->productDescriptionLink;
                         <li class="nav-item">
                             <a class="nav-link <?php echo $navTextColor; ?>" href="<?php echo $path; ?>contact.php">Contact</a>
                         </li>
-                        
+                        <?php
+                        if ($_SESSION['loggedIn']==true) 
+                        {
+                            
+                            echo '<li class="nav-item">';
+                            echo '<a class="nav-link'. $navTextColor .'" href="'.  $path .'admintools.php">Admin</a>';
+                            echo "</li>";
+                        }?>
                         <?php
                         if ($_SESSION['loggedIn']!=true) {
                             

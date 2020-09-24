@@ -1,6 +1,3 @@
-<?php 
-session_start();
-?>
 <?php
 
  include "header/header.php";
@@ -10,8 +7,7 @@ function displayContent()
 	$arr = scandir("content/");
 	for ($i=2; $i < sizeof($arr) ; $i++) 
 	{ 
-		if($arr[$i]!="images")
-		$obj = new displayGenericPost($arr[$i]);
+			$obj = new displayTutorial($arr[$i]);			
 	}
 }
 
@@ -23,7 +19,7 @@ function displayContent()
 </head>
 
 <body class="<?php echo $websiteBGColor; ?>">
-	<div class="container "> <br>
+	<div class="container"> <br>
 		<div class="row">
 			<?php displayContent(); ?>
 		</div>
