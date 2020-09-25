@@ -30,6 +30,9 @@ Current functionalities:
 10.Image upload has a 2MB limit (can be changed in image.php) and can only upload jpg,png and gif files(can also be changed).
 11.MD5 hashing for passwords (disabled it - can be added just by using md5() around the $password in the register and login pages).
 12.Reset Password option with Reset code which only works for one time reset - Need to enter your website Domain for mailing (resetPassword.php)
+13. Image Gallery
+14. Product landing page
+15. Image Manager to handler Image uploads to Gallery,Banner and other images used throught the website.
 
 Upcoming features:
 1. Better Search.
