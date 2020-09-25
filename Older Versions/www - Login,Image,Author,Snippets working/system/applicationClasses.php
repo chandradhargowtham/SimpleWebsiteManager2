@@ -191,7 +191,6 @@ class displayGenericPost
 
 class websiteConfig
 {
-	//Website FrontEnd Vars
 	public $websiteName;
 	public $websiteType;
 	public $bannerHeader;
@@ -206,25 +205,13 @@ class websiteConfig
 	public $linkTextColor;
 	public $navTextColor;
 	public $contactEmailId;
-	//product Desc HomePage vars
 	public $productDescriptionTitleText;
 	public $productDescriptionTitleLinkLabel;
 	public $productDescriptionMainText;
 	public $productDescriptionLink;
-	public $productDescriptionBG;
-	//product Page Vars
-	public $productPageHeader;
-	public $productPageParaOne;
-	public $productPageParaOneColor;
-	public $productPageParaTwo;
-	public $productPageParaTwoColor;
-	public $productPagefbLink;
-	public $productPageTwitterLink;
-	public $productPageInstaLink;
-	public $productPageLinkColor;
 
 
-	public function addData($a1,$a2,$a3,$a4,$a5,$a6,$a7,$a8,$a9,$a10,$a11,$a12,$a13,$a14,$a15,$a16,$a17,$a18,$a19,$a20,$a21,$a22,$a23,$a24,$a25,$a26,$a27,$a28)
+	public function addData($a1,$a2,$a3,$a4,$a5,$a6,$a7,$a8,$a9,$a10,$a11,$a12,$a13,$a14,$a15,$a16,$a17,$a18)
 	{
 		$this->websiteName =$a1;
 		$this->websiteType =$a2;
@@ -244,18 +231,6 @@ class websiteConfig
 		$this->productDescriptionTitleLinkLabel=$a16;
 		$this->productDescriptionMainText=$a17;
 		$this->productDescriptionLink=$a18;
-
-		$this->productPageHeader=$a19;
-		$this->productPageParaOne=$a20;
-		$this->productPageParaOneColor=$a21;
-		$this->productPageParaTwo=$a22;
-		$this->productPageParaTwoColor=$a23;
-		$this->productPagefbLink=$a24;
-		$this->productPageTwitterLink=$a25;
-		$this->productPageInstaLink=$a26;
-		$this->productPageLinkColor=$a27;
-		$this->productDescriptionBG=$a28;
-
 	}
 
 	public function getWebsiteName()

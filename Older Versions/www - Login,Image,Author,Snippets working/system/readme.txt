@@ -8,18 +8,16 @@
 
 2.  websiteConfig.json must have all website frontend config data like primary color, secondary color
 
-6. <code> snippet
-2. banner img
-image gallery type extra fnalities
+
 
 Pending
 
-1. Generic website/tutorial website - little Fnlity remains - article/product landing page/
-
+1. Generic website/tutorial website - little Fnlity remains - article/product landing page/image gallery type extra fnalities
+2. banner img
+3. In dash board, via checkmark bools to select which pages in index and which ones in header.
 4. Edit and Delete Pages
 5. role changes setter - dashboard
-6. Header Choose Product and Gallery Checkmark
-
+6. <code> snippet
 
 
 

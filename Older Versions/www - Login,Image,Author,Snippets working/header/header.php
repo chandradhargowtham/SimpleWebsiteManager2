@@ -40,17 +40,6 @@ $productDescriptionTitleText= $websiteConfigData->productDescriptionTitleText;
 $productDescriptionTitleLinkLabel= $websiteConfigData->productDescriptionTitleLinkLabel;
 $productDescriptionMainText= $websiteConfigData->productDescriptionMainText;
 $productDescriptionLink= $websiteConfigData->productDescriptionLink;
-$productPageHeader= $websiteConfigData->productPageHeader;
-$productPageParaOne= $websiteConfigData->productPageParaOne;
-$productPageParaOneColor= $websiteConfigData->productPageParaOneColor;
-$productPageParaTwo= $websiteConfigData->productPageParaTwo;
-$productPageParaTwoColor= $websiteConfigData->productPageParaTwoColor;
-$productPagefbLink= $websiteConfigData->productPagefbLink;
-$productPageTwitterLink= $websiteConfigData->productPageTwitterLink;
-$productPageInstaLink= $websiteConfigData->productPageInstaLink;
-$productPageLinkColor= $websiteConfigData->productPageLinkColor;
-$productDescriptionBG= $websiteConfigData->productDescriptionBG;
-
 
 ?>
 <!doctype html>
@@ -107,15 +96,6 @@ $productDescriptionBG= $websiteConfigData->productDescriptionBG;
 
                                 echo '<li class="nav-item">';
                                 echo '<a class="nav-link '.$navTextColor.' ?>" href="'.$path.'courses.php">Courses</a>';
-                                echo '</li>';
-                            }else
-                            {
-                                echo '<li class="nav-item">';
-                                echo '<a class="nav-link '.$navTextColor.' ?>" href="'.$path.'product.php">'.$productDescriptionTitleText.'</a>';
-                                echo '</li>';
-
-                                echo '<li class="nav-item">';
-                                echo '<a class="nav-link '.$navTextColor.' ?>" href="'.$path.'gallery.php">Gallery</a>';
                                 echo '</li>';
                             }
 

@@ -5,7 +5,7 @@
 </head>
 
 <body>
-	<div class="jumbotron jumbotron-fluid">
+	<div class="jumbotron jumbotron-fluid"
   <div class="container"> 
     <h1 class="display-4"><?php echo $bannerHeader; ?></h1>
     <p><?php echo $bannerSubHeader; ?></p>

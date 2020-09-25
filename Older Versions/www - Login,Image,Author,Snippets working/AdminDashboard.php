@@ -11,7 +11,7 @@ include "header/header.php";
 
 if(isset($_POST["submit"]))
 {
-	// Website FrontEnd Config
+	
 	$websiteName=$_POST["websiteName"];
 	$websiteType=$_POST["websiteType"];
 	$bannerHeader = $_POST["bannerHeader"];
@@ -26,30 +26,16 @@ if(isset($_POST["submit"]))
 	$linkTextColor= $_POST["linkTextColor"];
 	$navTextColor = $_POST["navTextColor"];
 	$contactEmailId = $_POST["contactEmailId"];
-	// ProductDescription HomePage Vars
 	$productDescriptionTitleText = $_POST["productDescriptionTitleText"];
 	$productDescriptionTitleLinkLabel = $_POST["productDescriptionTitleLinkLabel"];
 	$productDescriptionMainText = $_POST["productDescriptionMainText"];
 	$productDescriptionLink = $_POST["productDescriptionLink"];
-	$productDescriptionBG = $_POST["productDescriptionBG"];
-	// Product Page Vars
-	$productPageHeader= $_POST["productPageHeader"];
-	$productPageParaOne= $_POST["productPageParaOne"];
-	$productPageParaOneColor= $_POST["productPageParaOneColor"];
-	$productPageParaTwo= $_POST["productPageParaTwo"];
-	$productPageParaTwoColor= $_POST["productPageParaTwoColor"];
-	$productPagefbLink= $_POST["productPagefbLink"];
-	$productPageTwitterLink= $_POST["productPageTwitterLink"];
-	$productPageInstaLink= $_POST["productPageInstaLink"];
-	$productPageLinkColor= $_POST["productPageLinkColor"];
-
-	
 
 	
 
 	$obj = new websiteConfig();
 	
-	$obj->addData($websiteName,$websiteType,$bannerHeader,$bannerSubHeader,$primaryWebsiteColor,$secondaryWebsiteColor,$primaryTextColor,$secondaryTextColor,$websiteBGColor,$websiteNameColor,$footerURL,$linkTextColor,$navTextColor,$contactEmailId,$productDescriptionTitleText,$productDescriptionTitleLinkLabel,$productDescriptionMainText,$productDescriptionLink,$productPageHeader,$productPageParaOne,$productPageParaOneColor,$productPageParaTwo,$productPageParaTwoColor,$productPagefbLink,$productPageTwitterLink,$productPageInstaLink,$productPageLinkColor,$productDescriptionBG);
+	$obj->addData($websiteName,$websiteType,$bannerHeader,$bannerSubHeader,$primaryWebsiteColor,$secondaryWebsiteColor,$primaryTextColor,$secondaryTextColor,$websiteBGColor,$websiteNameColor,$footerURL,$linkTextColor,$navTextColor,$contactEmailId,$productDescriptionTitleText,$productDescriptionTitleLinkLabel,$productDescriptionMainText,$productDescriptionLink);
 	
 	toJson($obj);
 	Echo "Save Complete";
@@ -62,9 +48,9 @@ if(isset($_POST["submit"]))
 <body class="<?php echo $websiteBGColor; ?>">
 	<div class="container p-4">
 		<a class="btn btn-primary" href="adminCreatePage.php">Create a New post </a> <br><hr>
-		<a class="btn btn-primary" href="imageManager.php" target="_Blank">Image Manager </a> <br><hr>
 
-		<h4>Website FrontEnd Config : </h4><hr>
+		
+
 		<form action="AdminDashboard.php" method = "POST">
 			Enter Website Name : <input type="text" name="websiteName" value="<?php echo $websiteName; ?>"><br><br>
 			Enter Website Name Color : 
@@ -123,12 +109,12 @@ if(isset($_POST["submit"]))
 			Enter Website Background Color : 
 			<select name="websiteBGColor"><option value="bg-primary">Blue</option>
 				<option value="bg-dark">Black</option>
-				<option value="bg-light" selected="selected">White</option>
+				<option value="bg-light">White</option>
 				<option value="bg-danger">Red</option>
 				<option value="bg-info">Cerulean</option>
 				<option value="bg-success">Green</option>
 				<option value="bg-warning">Yellow</option>
-				<option value="bg-secondary">Gray</option>
+				<option value="bg-secondary" selected="selected">Gray</option>
 			</select><br><br>
 			Enter Link Text Color : 
 			<select name="linkTextColor"><option value="text-primary">Blue</option>
@@ -153,59 +139,10 @@ if(isset($_POST["submit"]))
 			Enter Footer URL : <input type="text" name="footerURL" value="<?php echo $footerURL; ?>"><br><br>
 			Enter Contact Email : <input type="text" name="contactEmailId" value="<?php echo $contactEmailId; ?>"><br><br>
 
-			<h4>Home Page Product Description Section : </h4><hr>
 			Enter Product Description Title : <input type="text" name="productDescriptionTitleText" value="<?php echo $productDescriptionTitleText; ?>"><br><br>
 			Enter Product Description Link Label : <input type="text" name="productDescriptionTitleLinkLabel" value="<?php echo $productDescriptionTitleLinkLabel; ?>"><br><br>
 			Enter Product Description Link : <input type="text" name="productDescriptionLink" value="<?php echo $productDescriptionLink; ?>"><br><br>
 			Enter Product Description Main Body : <input type="text" name="productDescriptionMainText" value="<?php echo $productDescriptionMainText; ?>"><br><br>
-			Enter Product Description Background Color : 
-			<select name="productDescriptionBG"><option value="bg-primary">Blue</option>
-				<option value="bg-dark">Black</option>
-				<option value="bg-light">White</option>
-				<option value="bg-danger">Red</option>
-				<option value="bg-info">Cerulean</option>
-				<option value="bg-success">Green</option>
-				<option value="bg-warning" selected="selected">Yellow</option>
-				<option value="bg-secondary">Gray</option>
-			</select><br><br>
-
-			<h4>Product Page Section : </h4><hr>
-			Enter Product Page Header : <input type="text" name="productPageHeader" value="<?php echo $productPageHeader; ?>"><br><br>
-			Enter productPageParaOne : <input type="text" name="productPageParaOne" value="<?php echo $productPageParaOne; ?>"><br><br>
-			Enter productPageParaOne Color : 
-			<select name="productPageParaOneColor"><option value="bg-primary">Blue</option>
-				<option value="bg-dark">Black</option>
-				<option value="bg-light" selected="selected">White</option>
-				<option value="bg-danger">Red</option>
-				<option value="bg-info">Cerulean</option>
-				<option value="bg-success">Green</option>
-				<option value="bg-warning">Yellow</option>
-				<option value="bg-secondary">Gray</option>
-			</select><br><br>
-			Enter productPageParaTwo : <input type="text" name="productPageParaTwo" value="<?php echo $productPageParaTwo; ?>"><br><br>
-			Enter productPageParaTwo Color : 
-			<select name="productPageParaTwoColor"><option value="bg-primary">Blue</option>
-				<option value="bg-dark">Black</option>
-				<option value="bg-light" selected="selected">White</option>
-				<option value="bg-danger">Red</option>
-				<option value="bg-info">Cerulean</option>
-				<option value="bg-success">Green</option>
-				<option value="bg-warning">Yellow</option>
-				<option value="bg-secondary">Gray</option>
-			</select><br><br>
-			Enter Fb Link : <input type="text" name="productPagefbLink" value="<?php echo $productPagefbLink; ?>"><br><br>
-			Enter Twitter Link : <input type="text" name="productPageTwitterLink" value="<?php echo $productPageTwitterLink; ?>"><br><br>
-			Enter Instagram Link : <input type="text" name="productPageInstaLink" value="<?php echo $productPageInstaLink; ?>"><br><br>
-			Enter Links Bar Color : 
-			<select name="productPageLinkColor"><option value="bg-primary">Blue</option>
-				<option value="bg-dark" selected="selected">Black</option>
-				<option value="bg-light">White</option>
-				<option value="bg-danger">Red</option>
-				<option value="bg-info">Cerulean</option>
-				<option value="bg-success">Green</option>
-				<option value="bg-warning">Yellow</option>
-				<option value="bg-secondary">Gray</option>
-			</select><br><br>
 
 
 			<input type="submit" name="submit" value="Save Data">

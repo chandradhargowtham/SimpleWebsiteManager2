@@ -1,7 +1,4 @@
 <?php
-session_start();
-?>
-<?php
 
  	include "header/header.php";
 	function scanCourses()

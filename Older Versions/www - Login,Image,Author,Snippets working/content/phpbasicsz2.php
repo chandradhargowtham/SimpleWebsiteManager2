@@ -1,0 +1,1 @@
+<?php include "../header/header.php"; ?><html><body><div class="container"><br><h1>z2</h1><br><br>caourse 1 file 2</div></body></html><br><br><?php include "../footer/footer.php"; ?>
