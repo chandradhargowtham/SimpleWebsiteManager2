@@ -34,6 +34,7 @@ if($_SESSION['loggedIn']!=true)
 			    echo '<option>PHP</option>';
 			    echo '<option>HTML-Bootstrap</option>';
 			    echo '<option>Design Patterns</option>';
+			    echo '<option>Programming</option>';
 			    echo '<option>General</option>';
   				echo '</select><br><br>';
 

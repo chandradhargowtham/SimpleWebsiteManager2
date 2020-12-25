@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class user
 {
 	public $userName;
@@ -109,7 +109,7 @@ class displayTutorial
 			
 			echo '	<div class="card '. $secondaryWebsiteColor.' p-2 m-2 ">';
 	    	echo '	<div class="card-body text-center ">';
-	      	echo '	<p class="card-text '. $websiteBGColor.' '.$navTextColor.'  p-2">'.$obj->tutorialLang.'</p>';
+	      	echo '	<p class="card-text '.' '.$primaryTextColor.'  p-2">'.$obj->tutorialLang.'</p>';
 	      	echo '	<p class="card-text "><h5 class ="'.$primaryWebsiteColor."  ".$navTextColor." p-2".'">'.$obj->tutorialName.'</h5>by '.$obj->author." on ".$obj->publishDate.' <p> </p>';
 	      	echo '	<a href="'."content/".$tutorialName.'" class="btn btn-dark">Go</a>';
 	   		echo '	</div>';

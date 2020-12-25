@@ -61,7 +61,7 @@ if(isset($_POST["submit"]))
 </head>
 <body class="<?php echo $websiteBGColor; ?>">
 	<div class="container p-4">
-		<a class="btn btn-primary" href="adminCreatePage.php">Create a New post </a> <br><hr>
+		<a class="btn btn-primary" href="AdminCreatePage.php">Create a New post </a> <br><hr>
 		<a class="btn btn-primary" href="imageManager.php" target="_Blank">Image Manager </a> <br><hr>
 
 		<h4>Website FrontEnd Config : </h4><hr>

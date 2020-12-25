@@ -1,6 +1,8 @@
 # SimpleWebsiteManagerPhp 2
 A simple cms system written in php which is modular. Any articles/posts you want to add can be added without editing/re adding other web content like navbars,footers etc. 
 
+Current Version : 2.1 
+
 Note: 
 
 1. This is for people who do not want to spend time creating website from scratch. Most of the editing can be done in the Admin Dashboard (php files can be edited for coders).

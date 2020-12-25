@@ -2,7 +2,7 @@
 <html>
 <head></head>
 <body class="<?php echo $websiteBGColor; ?>">
-	<div class="container-fluid <?php echo $websiteBGColor; ?> p-5">
+	<div class="container<?php echo $websiteBGColor; ?> p-5">
 		<h5>Featured Articles : </h5>
 		<div class="row">
       <?php
@@ -31,7 +31,7 @@ function displayContent()
   //
   $arr = scandir("content/");
   
-  for ($i=2; $i < sizeof($arr) ; $i++) 
+  for ($i=2; $i < 8 ; $i++) 
   { 
     if($arr[$i]!="images")
     {

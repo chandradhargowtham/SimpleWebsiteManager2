@@ -39,7 +39,7 @@ if (isset($_POST['textarea']))
 	$ohyeah=$_POST['textarea'];
 	$newText= str_replace("<", "&lt",$ohyeah );
 	$finalText= str_replace(">", "&gt",$newText );
-	$finalText = str_replace("\n", "</code><br><code>", $finalText);
+	$finalText = str_replace("\n", "<br>", $finalText);
 	$string="<b>Code Snippet</b><br>"."<code>".$finalText."</code>";
 	echo "Paste this code in you content area in the Admin Tools Page.";
 	echo "<input type='text' value='$string''>";	

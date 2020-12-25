@@ -33,7 +33,7 @@ if($_SESSION['loggedIn']!=true)
       echo "The file ".  basename( $_FILES['uploaded_file']['name']). 
       " has been uploaded";
 
-      $string='<img src="'."../".$path.'" width="500" height="400"><br>';
+      $string='<img src="'."../".$path.'" width="921" height="450"><br>';
       echo "<input type='text' value='$string''>";
     }else
     {

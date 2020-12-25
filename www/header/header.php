@@ -1,5 +1,5 @@
 <?php  
-
+session_start();
 if(is_dir("system"))
 {
 include "system/systemIncluders.php";
@@ -65,7 +65,7 @@ $productDescriptionBG= $websiteConfigData->productDescriptionBG;
     <!-- bootstrap cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- custom stylesheet -->
-    <link href="index.css" rel="stylesheet">
+    
     <!-- font awesome cdn -->
     <script src="https://kit.fontawesome.com/2f26e4cb71.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -93,7 +93,7 @@ $productDescriptionBG= $websiteConfigData->productDescriptionBG;
                         if ($_SESSION['loggedIn']==true) 
                         {
                         echo '<li class="nav-item">';
-                            echo '<a class="nav-link '.$navTextColor.'" href="'.$path.'adminDashboard.php">Dashboard</a>';
+                            echo '<a class="nav-link '.$navTextColor.'" href="'.$path.'AdminDashboard.php">Dashboard</a>';
                         echo "</li>";
                         }
                         ?>
@@ -164,3 +164,18 @@ $productDescriptionBG= $websiteConfigData->productDescriptionBG;
 </body>
 
 </html>
+<style>
+code{
+border: 3px solid green;
+margin: 2px 2px 2px 2px;
+padding: 5px 5px 5px 5px;
+display: block;
+color :#00ff00;
+background-color:black;
+}
+img
+{
+max-width: 100%;
+  height: auto;
+}
+</style>

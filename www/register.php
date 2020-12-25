@@ -52,10 +52,10 @@ if (isset($_POST["submit"]))
 		<div class="card m-5 w-60 <?php echo($websiteBGColor); ?>">
 		<form method="POST" action=""> 	
 
-			 <div class="form-group <?php echo $navTextColor; ?>"><p>Enter Name : </p><input class="form-control" type="text" name="userName"></div>
-			 <div class="form-group <?php echo $navTextColor; ?>"><p>Enter Password : </p><input class="form-control" type="password" name="password"></div>
-			 <div class="form-group <?php echo $navTextColor; ?>"><p>Enter Email ID :</p> <input class="form-control"type="text" name="emailId"></div>
-			 <div class="form-group <?php echo $navTextColor; ?>"> <input class="form-control btn <?php echo($secondaryWebsiteColor); ?>" type="submit" name="submit" value = "Create Account"></div>
+			 <div class="form-group <?php echo $primaryTextColor; ?>"><p>Enter Name : </p><input class="form-control" type="text" name="userName"></div>
+			 <div class="form-group <?php echo $primaryTextColor; ?>"><p>Enter Password : </p><input class="form-control" type="password" name="password"></div>
+			 <div class="form-group <?php echo $primaryTextColor; ?>"><p>Enter Email ID :</p> <input class="form-control"type="text" name="emailId"></div>
+			 <div class="form-group <?php echo $primaryTextColor; ?>"> <input class="form-control btn <?php echo($secondaryWebsiteColor); ?>" type="submit" name="submit" value = "Create Account"></div>
 		</form>
 		</div>
 	</div>
