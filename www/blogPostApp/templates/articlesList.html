@@ -1,0 +1,18 @@
+{%include 'basepage.html'%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Articles</title>
+    </head>
+    <body>
+        {% for card in articles %}
+        <div class="card w-50">
+            <div class="card-body">
+              <h5 class="card-title"> {{ card.title }}</h5>
+              <p class="card-text">{{ card.content }}</p>
+              <a href="/article/{{card.id}}" class="btn btn-primary"> Go</a>
+            </div>
+          </div>
+        {%endfor%}  
+    </body>
+</html>

@@ -1,0 +1,16 @@
+{%include 'basepage.html'%}
+<!DOCTYPE html>
+<head>
+    <title>Misplaced Minds - {{article.title}}</title>
+    <br><h1>{{article.title}}<br><hr></h1>
+</head>
+<body>
+    {% load static %}
+    <img src="{% static '' %}{{photo}}" alt="My image" height=400 >
+    
+    <p>{{article.content}}</p>
+</body>
+<footer>
+    <p><hr>{{article.timestamp}} by {{article.author}} </p>
+</footer>
+</html>
