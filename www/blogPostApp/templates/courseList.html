@@ -1,0 +1,24 @@
+{%include 'basepage.html'%}
+{%include 'navbar.html'%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Courses</title>
+    </head>
+    <body class="bg-info">
+        <div  class="container">
+        {% for card in articles %}
+            {% if card.course != "" %} 
+            {%ifchanged card.course%}<br><h2 class="badge badge-light">Course : {{card.course}}</h2> {%endifchanged%}                            
+                <div class="card text-white bg-success mb-3" style="max-width: 18rem;">            
+                    <div class="card-header">{{card.course}}</div>
+                    <div class="card-body">
+                    <h5 class="card-title"><a class="text-light" href="/article/{{card.id}}">{{card.title}}</a></h5>              
+                    </div>
+                </div>                         
+            {%endif%}
+        {%endfor%}  
+    </div>
+    <br>
+    </body>
+</html>

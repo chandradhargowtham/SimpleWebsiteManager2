@@ -1,0 +1,23 @@
+{%include 'basepage.html'%}
+{%include 'navbar.html'%}
+<!DOCTYPE html>
+<head>
+    <title>Articles</title>
+</head>
+<body>    <br>
+    <div class="container">
+        <div class="card-columns">
+          {% for card in list %}            
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">            
+                <div class="card-header">{{card.category}}</div>
+                <div class="card-body">
+                <h5 class="card-title"><a class="text-light" href="/article/{{card.id}}">{{card.title}}</a></h5>              
+                </div>
+            </div> 
+          {%endfor%}              
+        </div>
+      </div>  
+    <p></p>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+{%include 'basepage.html'%}
+{%include 'navbar.html'%}
+<!DOCTYPE html>
+<head>
+    <title>Discover Code</title>
+</head>
+<body class="bg-info"><br>
+    <div class="container">
+        <div class="card-columns">
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">            
+                <div class="card-header">Game Dev, VR and AR</div>
+                <div class="card-body">
+                <h5 class="card-title"><a class= "text-light" href="/Unity">Unity</a</h5>              
+                </div>
+            </div>
+
+            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">    
+                <div class="card-header">Django, Python , PHP, HTML-CSS</div>        
+                <div class="card-body">
+                    <h5 class="card-title"><a class= "text-light" href="/Web">Web Development</a</h5>     
+                </div>
+            </div>
+
+            <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">        
+                <div class="card-header">Ethereum, Hyperledger</div>    
+                <div class="card-body">
+                    <h5 class="card-title"><a class= "text-light" href="/Blockchain">Blockchain</a</h5>     
+                </div>
+            </div>
+
+            <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">  
+                <div class="card-header">Git, Python, C#,  Java</div>          
+                <div class="card-body">
+                    <h5 class="card-title"><a class= "text-light" href="/Programming">Programming</a</h5>     
+                </div>
+            </div>
+
+            <div class="card text-white bg-success mb-3" style="max-width: 18rem;">    
+                <div class="card-header">General Articles</div>        
+                <div class="card-body">
+                    <h5 class="card-title"><a class= "text-light" href="/General">General</a</h5>                  
+                </div>
+            </div>
+
+            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">    
+                <div class="card-header">Architecture</div>        
+                <div class="card-body">
+                    <h5 class="card-title"><a class= "text-light" href="/DesignPatterns">Design Patterns</a</h5>           
+                </div>
+            </div>
+        </div>        
+    </div>
+    
+    <br>
+
+    <hr>
+    <div class="container"><h2 class="badge badge-light ">Recent Articles</h2></div><br>
+    <div class="card-columns container">        
+        {% for card in recent %}
+        <div class="card bg-primary">
+          <div class="card-body">
+            <h5 class="card-title"><a class="text-light" href="/article/{{card.id}}">{{card.title}}</a></h5>            
+            <p class="card-text"><small class="text-dark">Posted on {{card.timestamp}}</small></p>
+          </div>
+        </div>
+        {%endfor%}        
+    </div>
+    <br>
+    <hr><br>
+
+    <div class="container"><h2 class="badge badge-light ">Featured Articles</h2></div><br>
+    <div class="card-columns container">        
+        {% for card in featured %}
+        <div class="card bg-warning">
+          <div class="card-body">
+            <h5 class="card-title"><a class="text-dark" href="/article/{{card.id}}">{{card.title}}</a></h5>            
+            <p class="card-text"><small class="text-dark">Posted on {{card.timestamp}}</small></p>
+          </div>
+        </div>
+        {%endfor%}        
+    </div>
+    <br>
+    <hr><br>
+    
+</body>
+</html>

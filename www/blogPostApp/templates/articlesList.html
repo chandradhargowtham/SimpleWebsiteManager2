@@ -1,18 +1,26 @@
 {%include 'basepage.html'%}
+{%include 'navbar.html'%}
 <!DOCTYPE html>
 <html>
     <head>
         <title>Articles</title>
     </head>
-    <body>
-        {% for card in articles %}
-        <div class="card w-50">
-            <div class="card-body">
-              <h5 class="card-title"> {{ card.title }}</h5>
-              <p class="card-text">{{ card.content }}</p>
-              <a href="/article/{{card.id}}" class="btn btn-primary"> Go</a>
-            </div>
+    <body class="bg-info"><br>
+      <div class="container">
+          <div class="card-columns">
+            {% for card in articles %}
+              {% if card.course == "" %}
+              <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">            
+                  <div class="card-header">{{card.category}}</div>
+                  <div class="card-body">
+                  <h5 class="card-title"><a class="text-light" href="/article/{{card.id}}">{{card.title}}</a></h5>              
+                  </div>
+              </div> 
+              {%endif%}
+            {%endfor%}              
           </div>
-        {%endfor%}  
-    </body>
+        </div>  
+      </body> 
 </html>
+
+
