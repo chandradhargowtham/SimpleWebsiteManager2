@@ -1,4 +1,13 @@
-# SimpleWebsiteManagerPhp 2
+# SimpleWebsiteManager 2.2
+A simple cms system written in python+django. Any articles/posts you want to add can be added without editing/re adding other web content like navbars,footers etc. 
+
+Note: 
+1.Login using the account username: admin/password: admin from the [localhost/websitename]/admin page.
+2.Articles and users can be managed via the django admin page.
+3.Website templates can be changed from the /Templates folder - should be written in django template code.
+
+
+# SimpleWebsiteManager 2.1
 A simple cms system written in php which is modular. Any articles/posts you want to add can be added without editing/re adding other web content like navbars,footers etc. 
 
 Current Version : 2.1 
